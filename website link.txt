@@ -1,1 +1,1 @@
-https://earthquake-prediction-qrfc.onrender.com/predict
+https://earthquake-prediction-qrfc.onrender.com
