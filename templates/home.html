@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Earthquake Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post" class="prediction-form">
+            <input type="text" name="Year" placeholder="Year" required /><br>
+            <input type="text" name="Month" placeholder="Month" required /><br>
+            <input type="text" name="Day" placeholder="Day" required /><br>
+            <input type="text" name="Latitude" placeholder="Latitude" required /><br>
+            <input type="text" name="Longitude" placeholder="Longitude" required /><br>
+            <input type="text" name="Depth" placeholder="Depth (in KM)" required /><br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="prediction-result">
+            <p>{{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
